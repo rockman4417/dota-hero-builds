@@ -8,7 +8,7 @@ export const HeroSearch = (props) => {
     <>
       <div className='heroSeachContainer'>
         <h1>Search for a hero build</h1>
-        <Input />
+        <Input className='heroSearchInput' />
       </div>
     </>
   )

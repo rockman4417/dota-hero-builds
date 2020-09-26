@@ -1,10 +1,8 @@
 import React from 'react';
-import logo from './logo.svg';
-import ReactDOM from 'react-dom';
-import { BrowserRouter, Router, Route } from 'react-router-dom';
+import { BrowserRouter, Route } from 'react-router-dom';
 import {Switch} from 'react-router'; 
 import { HeroSearch } from './components/heroSearch/HeroSearch.js';
-import './App.css';
+import './App.scss';
 
 const App = () => (
   <BrowserRouter>
