@@ -6,12 +6,12 @@
   align-items: center;
   height: 100%;
   padding: rem(48px);
-  background-image: url('../../assets/dota2Logo.jpg');
-  background-size: 100%;
-  background-repeat: no-repeat;
-  background-position: center;
 }
 
 .heroSearchInput {
   width: 50%;
+}
+
+.dotaLogo {
+  height: 50%;
 }

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Input, Button } from '@material-ui/core';
+import * as dota2logo from '../../assets/dota2Logo.jpg';
 import './styles.scss';
 
 const OPEN_DOTA_BASE_URL = 'https://api.opendota.com/api';
@@ -55,6 +56,7 @@ export const HeroSearch = (props) => {
             submit
           </Button>
         </div>
+        <img className='dotaLogo' src={dota2logo} alt='dota 2 logo' />
       </div>
     </>
   );
