@@ -13,9 +13,8 @@ export const HeroSearch = (props) => {
 
   useEffect(() => {
     fetch(`${OPEN_DOTA_BASE_URL}/heroes?api_key${OPEN_DOTA_API_KEY}`, { mode: 'cors' })
-      .then((res) => res.json())
-      .then((res) => {
-        console.log(res);
+      .then(res => res.json())
+      .then(res => {
         setHeroList(res);
       })
       .catch((err) => console.log(err));
@@ -34,9 +33,8 @@ export const HeroSearch = (props) => {
   const handleHeroSearch = () => {
     console.log(heroId)
     fetch(`${OPEN_DOTA_BASE_URL}/heroes/${heroId}/itemPopularity?api_key${OPEN_DOTA_API_KEY}`, { mode: 'cors' })
-      .then((res) => res.json())
-      .then((res) => {
-        console.log(res);
+      .then(res => res.json())
+      .then(res => {
         setHeroList(res);
       })
       .catch((err) => console.log(err));
