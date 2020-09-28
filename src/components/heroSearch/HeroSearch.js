@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Input, Button } from '@material-ui/core';
+import { useHistory } from "react-router-dom";
+
 import * as dota2logo from '../../assets/dota2Logo.jpg';
 import './styles.scss';
 
@@ -11,10 +13,13 @@ export const HeroSearch = (props) => {
   const [heroList, setHeroList] = useState([]);
   const [heroId, setHeroId] = useState();
 
+  const history = useHistory();
+
   useEffect(() => {
     fetch(`${OPEN_DOTA_BASE_URL}/heroes?api_key${OPEN_DOTA_API_KEY}`, { mode: 'cors' })
       .then(res => res.json())
       .then(res => {
+        console.log(res);
         setHeroList(res);
       })
       .catch((err) => console.log(err));
@@ -33,9 +38,11 @@ export const HeroSearch = (props) => {
   const handleHeroSearch = () => {
     console.log(heroId)
     fetch(`${OPEN_DOTA_BASE_URL}/heroes/${heroId}/itemPopularity?api_key${OPEN_DOTA_API_KEY}`, { mode: 'cors' })
-      .then(res => res.json())
-      .then(res => {
+      .then((res) => res.json())
+      .then((res) => {
+        console.log(res);
         setHeroList(res);
+        history.push('/build');
       })
       .catch((err) => console.log(err));
   };
