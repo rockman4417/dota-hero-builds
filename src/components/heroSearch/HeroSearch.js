@@ -8,9 +8,6 @@ import * as dota2logo from '../../assets/dota2Logo.jpg';
 import './styles.scss';
 import { ItemBuild } from '../itemBuild/ItemBuild';
 
-const OPEN_DOTA_BASE_URL = 'https://api.opendota.com/api';
-const OPEN_DOTA_API_KEY = '3276109-04b4-4fd8-bc9f-2244eae2a5c';
-
 export const HeroSearch = (props) => {
   const [heroName, setHeroName] = useState('');
   const [heroList, setHeroList] = useState([]);
@@ -20,7 +17,7 @@ export const HeroSearch = (props) => {
   const history = useHistory();
 
   useEffect(() => {
-    fetch(`${OPEN_DOTA_BASE_URL}/heroes?api_key${OPEN_DOTA_API_KEY}`, { mode: 'cors' })
+    fetch(`${process.env.REACT_APP_OPEN_DOTA_BASE_URL}/heroes?api_key${process.env.REACT_APP_OPEN_DOTA_API_KEY}`, { mode: 'cors' })
       .then(res => res.json())
       .then(res => {
         console.log(res);
@@ -40,8 +37,7 @@ export const HeroSearch = (props) => {
   };
 
   const handleHeroSearch = () => {
-    console.log('heroId', heroId)
-    fetch(`${OPEN_DOTA_BASE_URL}/heroes/${heroId}/itemPopularity?api_key${OPEN_DOTA_API_KEY}`, { mode: 'cors' })
+    fetch(`${process.env.REACT_APP_OPEN_DOTA_BASE_URL}/heroes/${heroId}/itemPopularity?api_key${process.env.REACT_APP_OPEN_DOTA_API_KEY}`, { mode: 'cors' })
       .then((res) => res.json())
       .then((res) => {
         console.log(res);

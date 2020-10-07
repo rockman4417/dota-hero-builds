@@ -53,7 +53,7 @@ export const ItemBuild = (props) => {
       <div className='itemsRow'>
         {startingItemsCopy.map((element) => (
           <div key={element.id}>
-            <img src={`${openDotaUrl}${element.img}`} />
+            <img src={`${openDotaUrl}${element.img}`}alt='item'  />
             <span>{element.dname}</span>
           </div>
         ))}
@@ -62,7 +62,7 @@ export const ItemBuild = (props) => {
       <div className='itemsRow'>
         {earlyItemsCopy.map((element) => (
           <div key={element.id}>
-            <img src={`${openDotaUrl}${element.img}`} />
+            <img src={`${openDotaUrl}${element.img}`} alt='item' />
             <span>{element.dname}</span>
           </div>
         ))}
@@ -71,7 +71,7 @@ export const ItemBuild = (props) => {
       <div className='itemsRow'>
         {midItemsCopy.map((element) => (
           <div key={element.id}>
-            <img src={`${openDotaUrl}${element.img}`} />
+            <img src={`${openDotaUrl}${element.img}`} alt='item' />
             <span>{element.dname}</span>
           </div>
         ))}
@@ -80,7 +80,7 @@ export const ItemBuild = (props) => {
       <div className='itemsRow'>
         {lateItemsCopy.map((element) => (
           <div key={element.id}>
-            <img src={`${openDotaUrl}${element.img}`} />
+            <img src={`${openDotaUrl}${element.img}`} alt='item' />
             <span>{element.dname}</span>
           </div>
         ))}
