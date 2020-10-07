@@ -8,6 +8,11 @@
   padding: rem(48px);
 }
 
+.heroSearchRow {
+  display: flex;
+  flex-direction: row;
+}
+
 .heroSearchInput {
   width: 50%;
 }

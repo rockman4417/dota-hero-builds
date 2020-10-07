@@ -8,7 +8,6 @@ const App = () => (
   <BrowserRouter>
     <Switch>
       <Route exact path='/' component={HeroSearch} />
-      <Route exact path='/build' component={ItemBuild} />
     </Switch>
   </BrowserRouter>
 );
