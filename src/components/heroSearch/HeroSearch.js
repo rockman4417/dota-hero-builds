@@ -7,6 +7,7 @@ import { useHistory, Link } from "react-router-dom";
 import * as dota2logo from '../../assets/dota2Logo.jpg';
 import './styles.scss';
 import { ItemBuild } from '../itemBuild/ItemBuild';
+require('dotenv').config();
 
 export const HeroSearch = (props) => {
   const [heroName, setHeroName] = useState('');
@@ -17,6 +18,7 @@ export const HeroSearch = (props) => {
   const history = useHistory();
 
   useEffect(() => {
+    console.log('env', process.env.REACT_APP_OPEN_DOTA_BASE_URL, process.env.REACT_APP_OPEN_DOTA_API_KEY)
     fetch(`${process.env.REACT_APP_OPEN_DOTA_BASE_URL}/heroes?api_key${process.env.REACT_APP_OPEN_DOTA_API_KEY}`, { mode: 'cors' })
       .then(res => res.json())
       .then(res => {
@@ -37,6 +39,7 @@ export const HeroSearch = (props) => {
   };
 
   const handleHeroSearch = () => {
+    console.log('env', process.env.REACT_APP_OPEN_DOTA_BASE_URL, process.env.REACT_APP_OPEN_DOTA_API_KEY)
     fetch(`${process.env.REACT_APP_OPEN_DOTA_BASE_URL}/heroes/${heroId}/itemPopularity?api_key${process.env.REACT_APP_OPEN_DOTA_API_KEY}`, { mode: 'cors' })
       .then((res) => res.json())
       .then((res) => {
