@@ -19,6 +19,7 @@ export const HeroSearch = (props) => {
 
   useEffect(() => {
     console.log('env', process.env.REACT_APP_OPEN_DOTA_BASE_URL, process.env.REACT_APP_OPEN_DOTA_API_KEY)
+    console.log('endpoint', `${process.env.REACT_APP_OPEN_DOTA_BASE_URL}/heroes?api_key${process.env.REACT_APP_OPEN_DOTA_API_KEY}`)
     fetch(`${process.env.REACT_APP_OPEN_DOTA_BASE_URL}/heroes?api_key${process.env.REACT_APP_OPEN_DOTA_API_KEY}`, { mode: 'cors' })
       .then(res => res.json())
       .then(res => {
